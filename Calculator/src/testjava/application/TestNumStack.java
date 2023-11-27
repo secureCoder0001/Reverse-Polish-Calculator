@@ -31,6 +31,21 @@ class TestNumStack {
     assertEquals(numStack.size(), 1); 
     
   }
-
   
+  @Test
+  void testPushThreeValue() {
+    // Further testing the push() method
+    
+    numStack.push(5.6f);
+    assertEquals(numStack.size(), 1);
+
+    numStack.push(3.5f);
+    assertEquals(numStack.size(), 2);
+
+    numStack.push(10.5f);  
+    assertNotEquals(numStack.size(), 2,
+        "Test that the size indeed changes when an item is added to the stack");
+    assertEquals(numStack.size(), 3, "Test that the size expected relflects the actual size of the stack");
+  } 
+
 }
