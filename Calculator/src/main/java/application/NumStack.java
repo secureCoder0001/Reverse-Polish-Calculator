@@ -29,6 +29,19 @@ public class NumStack {
     
     return stack.size();
   }
+  
+  
+  /**
+   * Method to push float onto NumStack.
+   * 
+   * @param num float to be pushed onto stack.
+   */
+  public void push(float num) {
+    
+    stack.push(new Entry(num));
+    
+  }  
+  
  
 }
 

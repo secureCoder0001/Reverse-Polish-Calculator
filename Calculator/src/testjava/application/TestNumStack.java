@@ -22,4 +22,15 @@ class TestNumStack {
     
   }
   
+  @Test
+  void testPush() {
+    // Test that push method of numStack pushes floats to the stack and updates NumStack size
+    // accordingly
+    
+    numStack.push(3.5f);
+    assertEquals(numStack.size(), 1); 
+    
+  }
+
+  
 }
