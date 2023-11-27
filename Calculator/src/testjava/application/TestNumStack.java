@@ -34,7 +34,7 @@ class TestNumStack {
   
   @Test
   void testPushThreeValue() {
-    // Further testing the push() method
+    // Further testing the push() method by pushing three floats onto NumStack.
     
     numStack.push(5.6f);
     assertEquals(numStack.size(), 1);
@@ -47,5 +47,18 @@ class TestNumStack {
         "Test that the size indeed changes when an item is added to the stack");
     assertEquals(numStack.size(), 3, "Test that the size expected relflects the actual size of the stack");
   } 
+    
+  @Test
+  void pushMillions() {
+    // Pushing a few million numbers onto numStack and checking if expected size reflects actuals size;
+    
+    for (int i = 0; i < 6000000; i++) {
+      numStack.push((float) i);
+    }
+
+    assertEquals(numStack.size(), 6000000); 
+  }
+
+  
 
 }
