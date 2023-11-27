@@ -1,5 +1,6 @@
 package application;
 
+import java.util.EmptyStackException;
 
 /**
  * A facade for stack to hide implementation details of stack for ease of use of floats. 
@@ -27,20 +28,11 @@ public class NumStack {
   */
   public int size() {
     
-    return stack.size();
+    return this.stack.size();
   }
   
   
-  /**
-   * Method to push float onto NumStack.
-   * 
-   * @param num float to be pushed onto stack.
-   */
-  public void push(float num) {
-    
-    stack.push(new Entry(num));
-    
-  }  
+  
   
  
 }
