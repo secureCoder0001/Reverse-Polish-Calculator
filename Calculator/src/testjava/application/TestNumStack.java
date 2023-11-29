@@ -31,4 +31,15 @@ class TestNumStack {
   }
   
 
+  @Test // Test to check that top() method returns a number without updating stack - CHECK LATER
+  void testTop() {
+    
+    numStack.push(80.5f);  
+    assertEquals(numStack.top(), 80.5f);
+    
+    
+  }
+
+  
+  
 }

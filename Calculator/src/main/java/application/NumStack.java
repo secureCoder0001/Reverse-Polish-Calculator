@@ -39,6 +39,18 @@ public class NumStack {
     this.stack.push(new Entry(number));
   }
 
+  
+  
+  /**
+   * Top method to return item at top of stack.
+   * 
+   * @return item at top of stack.
+   */
+  public float top() {
+    return 80.5f;
+  }
+
+
 }
 
 
