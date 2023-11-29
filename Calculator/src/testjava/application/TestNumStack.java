@@ -36,10 +36,13 @@ class TestNumStack {
     
     numStack.push(80.5f);  
     assertEquals(numStack.top(), 80.5f);
-    
-    
   }
-
   
+  @Test
+  void testPop() {
+    
+    numStack.push(90.5f);
+    assertEquals(numStack.pop(), 90.5f);
+  }
   
 }

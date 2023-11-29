@@ -40,7 +40,6 @@ public class NumStack {
   }
 
   
-  
   /**
    * Top method to return item at top of stack.
    * 
@@ -49,8 +48,23 @@ public class NumStack {
   public float top() {
     return 80.5f;
   }
-
-
+  
+  /**
+   * Method to return a float from the NumStack and removing it from said NumStack.
+   * 
+   * @return item returned from stack.
+   */
+  public float pop() {
+    
+    try {
+      return this.stack.pop().getValue();
+    } catch (BadTypeException e) {
+      System.err.println(); 
+    }
+    return -1;
+  }
+  
+  
 }
 
 
