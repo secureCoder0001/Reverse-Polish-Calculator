@@ -42,6 +42,16 @@ class TestNumStack {
   void testPop() {
     
     numStack.push(90.5f);
+    assertEquals(numStack.size(), 1);
+    
+    numStack.push(70.5f);
+    assertEquals(numStack.size(), 2);
+    
+    numStack.push(80.5f);
+    assertEquals(numStack.size(), 3);
+    
+    assertEquals(numStack.pop(), 80.5f);
+    assertEquals(numStack.pop(), 70.5f);
     assertEquals(numStack.pop(), 90.5f);
   }
   
