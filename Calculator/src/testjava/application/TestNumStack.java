@@ -34,11 +34,21 @@ class TestNumStack {
   @Test // Test to check that top() method returns a number without updating stack - CHECK LATER
   void testTop() {
     
-    numStack.push(80.5f);  
-    assertEquals(numStack.top(), 80.5f);
+    numStack.push(90.5f);  
+    numStack.push(70.5f);
+    numStack.push(80.5f); 
+    
+    assertEquals(numStack.top(), 80.5);    
+    
+    numStack.pop();
+    assertEquals(numStack.top(), 70.5); 
+    
+     
+    numStack.pop();
+    assertEquals(numStack.top(), 90.5);
   }
   
-  @Test
+  @Test // Test to check pops the expected numbers from stack.
   void testPop() {
     
     numStack.push(90.5f);

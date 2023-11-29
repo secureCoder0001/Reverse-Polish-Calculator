@@ -46,7 +46,14 @@ public class NumStack {
    * @return item at top of stack.
    */
   public float top() {
-    return 80.5f;
+    
+    try {
+      return this.stack.top().getValue();
+    } catch (BadTypeException e) {
+      System.err.println();
+    }
+    
+    return -1;    
   }
   
   /**
