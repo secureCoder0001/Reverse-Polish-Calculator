@@ -24,9 +24,10 @@ class TestNumStack {
   }
   
   @Test
-  void testPush() {
-    
+  void testPush(){
+    // Test that push method works by checking size is updated accordingly, size should be 1.    
     numStack.push(3.5f);
+    assertEquals(numStack.size(), 1); 
   }
   
 
