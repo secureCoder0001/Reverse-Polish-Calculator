@@ -38,14 +38,14 @@ class TestNumStack {
     numStack.push(70.5f);
     numStack.push(80.5f); 
     
-    assertEquals(numStack.top(), 80.5);    
+    assertEquals(numStack.top(), 80.5f);    
     
     numStack.pop();
-    assertEquals(numStack.top(), 70.5); 
+    assertEquals(numStack.top(), 70.5f); 
     
      
     numStack.pop();
-    assertEquals(numStack.top(), 90.5);
+    assertEquals(numStack.top(), 90.5f);
   }
   
   @Test // Test to check pops the expected numbers from stack.
@@ -69,11 +69,13 @@ class TestNumStack {
   @Test
   void testIsEmpty() {
     assertTrue(numStack.isEmpty());
-  }
+    
+    numStack.push(90.5f);
+    assertFalse(numStack.isEmpty());
+    
+    numStack.pop();
+    assertTrue(numStack.isEmpty());
 
-  
-  
-  
-  
+  }
   
 }

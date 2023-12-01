@@ -80,7 +80,7 @@ public class NumStack {
    */
   public boolean isEmpty() {
     
-    return true;
+    return this.stack.size() == 0;
   }
   
 }
