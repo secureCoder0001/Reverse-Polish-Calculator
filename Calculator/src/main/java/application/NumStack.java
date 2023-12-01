@@ -1,5 +1,7 @@
 package application;
 
+// import java.util.function.BooleanSupplier;
+
 /**
  * A facade for stack to hide implementation details of stack for ease of use of floats. 
  * 
@@ -71,9 +73,14 @@ public class NumStack {
     return -1;
   }
   
+  /**
+   * Check if NumStack instance is empty. If so, return true, false otherwise.
+   * 
+   * @return boolean value indicating whether or not NumStack is empty.
+   */
+  public boolean isEmpty() {
+    
+    return true;
+  }
   
 }
-
-
-
-

@@ -65,4 +65,15 @@ class TestNumStack {
     assertEquals(numStack.pop(), 90.5f);
   }
   
+  
+  @Test
+  void testIsEmpty() {
+    assertTrue(numStack.isEmpty());
+  }
+
+  
+  
+  
+  
+  
 }
