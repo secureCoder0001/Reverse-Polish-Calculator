@@ -25,7 +25,13 @@ public class RevPolishCalc {
       return result;
     }    
     
+    // To capture when only two values are entered. 
+    // That is, a value, followed by a space and finally, followed further by another value
+    if (calcInput.length() == 3) { 
+      throw new InvalidExpression("Unbalanced Expression");
+    }
+        
     return 1;
   }
-
+  
 }

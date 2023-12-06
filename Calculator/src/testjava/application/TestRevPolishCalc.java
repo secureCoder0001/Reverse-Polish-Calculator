@@ -23,8 +23,16 @@ class TestRevPolishCalc {
   }
   
   @Test
-  void testSingleDigit() throws InvalidExpression {
+  void testSingleNum() throws InvalidExpression {
     assertEquals(revPolishCalc.evaluate("9"), 9.0);
   }
+
+  @Test
+  void testTwoNums() {
+    
+    assertThrows(InvalidExpression.class, () -> revPolishCalc.evaluate("6 9"),
+        "Inputting only two values should throw an InvalidExpressionException");
+  }
+
   
 }
