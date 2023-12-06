@@ -19,6 +19,11 @@ public class RevPolishCalc {
     if (calcInput.equals("")) {
       throw new InvalidExpression("An empty string cannot be evaluated.");
     }
+
+    if (calcInput.length() == 1) {      
+      float result = Float.valueOf(calcInput);
+      return result;
+    }    
     
     return 1;
   }

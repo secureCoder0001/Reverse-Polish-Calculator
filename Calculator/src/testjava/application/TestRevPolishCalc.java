@@ -21,5 +21,10 @@ class TestRevPolishCalc {
     assertThrows(InvalidExpression.class, () -> revPolishCalc.evaluate(""),
         "Inputting an empty expression should throw an InvalidExpressionException");
   }
-
+  
+  @Test
+  void testSingleDigit() throws InvalidExpression {
+    assertEquals(revPolishCalc.evaluate("9"), 9.0);
+  }
+  
 }
