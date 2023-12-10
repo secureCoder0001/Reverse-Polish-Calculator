@@ -83,12 +83,10 @@ public class RevPolishCalc {
             float rightOperand = this.expressStack.pop();
             float leftOperand = this.expressStack.pop();
             this.expressStack.push(leftOperand - rightOperand);
+          } else if (operator == Symbol.TIMES) {
+            float tempResult = this.expressStack.pop() * this.expressStack.pop(); 
+            this.expressStack.push(tempResult);
           }
-
-          
-          
-          
-          
            
         }
       }
