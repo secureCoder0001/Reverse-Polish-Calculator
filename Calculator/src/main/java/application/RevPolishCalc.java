@@ -71,7 +71,12 @@ public class RevPolishCalc {
           if (operator == Symbol.PLUS) {
             float tempResult = this.expressStack.pop() + this.expressStack.pop(); 
             this.expressStack.push(tempResult);
+          } else if (operator == Symbol.DIVIDE) {
+            float rightOperand = this.expressStack.pop();
+            float leftOperand = this.expressStack.pop();
+            this.expressStack.push(leftOperand / rightOperand);
           }
+          
           
         }
       }

@@ -44,6 +44,9 @@ class TestRevPolishCalc {
     assertEquals(this.revPolishCalc.evaluate("3 6 9 12 + + +"), 30.0f);
   }
 
-  
+  @Test
+  void testDivide() throws InvalidExpression {
+    assertEquals(this.revPolishCalc.evaluate("6 2 /"), 3.0f);
+  }  
   
 }
