@@ -31,8 +31,19 @@ class TestRevPolishCalc {
   void testTwoNums() {
     
     assertThrows(InvalidExpression.class, () -> revPolishCalc.evaluate("6 9"),
-        "Inputting only two values should throw an InvalidExpressionException");
+        "Inputting ONLY two values should throw an InvalidExpressionException");
   }
 
+  
+  @Test
+  void testPlus() throws InvalidExpression {
+    assertEquals(this.revPolishCalc.evaluate("6 3 +"), 9.0f);
+    
+    assertEquals(this.revPolishCalc.evaluate("9 7 5 + +"), 21.0f);
+    
+    assertEquals(this.revPolishCalc.evaluate("3 6 9 12 + + +"), 30.0f);
+  }
+
+  
   
 }

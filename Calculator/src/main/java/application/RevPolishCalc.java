@@ -1,5 +1,7 @@
 package application;
 
+import java.util.Scanner;
+
 /**
  * Class to represent calculator that performs calculations in reverse polish notation.
  * 
@@ -8,6 +10,17 @@ package application;
  */
 public class RevPolishCalc {
 
+  private NumStack expressStack;
+  
+  /**
+   * Contstructs a new numstack to store the operands of calculation input.
+   */
+  public RevPolishCalc() {
+    this.expressStack = null;
+  }
+
+  
+  
   /**
    * Method calculates calculated given input using the reverse polish/postfix notation.
    * 
@@ -31,7 +44,54 @@ public class RevPolishCalc {
       throw new InvalidExpression("Unbalanced Expression");
     }
         
-    return 1;
+
+    this.expressStack = new NumStack();
+    Scanner input = new Scanner(calcInput);
+    Symbol operator = Symbol.INVALID;
+    float result;
+    
+    try {
+      while (input.hasNext()) {
+        if (input.hasNextFloat()) {
+          this.expressStack.push(input.nextFloat());
+        } else {         
+          String token = input.next();
+          Symbol[] possibleOperations = Symbol.values();
+          
+          Symbol ithOperator;
+          for (int i = 0; i < possibleOperations.length; i++) {
+            ithOperator = possibleOperations[i];
+            
+            if (ithOperator.toString().equals(token)) {
+              operator = ithOperator;
+              break;
+            }
+          }
+          
+          if (operator == Symbol.PLUS) {
+            float tempResult = this.expressStack.pop() + this.expressStack.pop(); 
+            this.expressStack.push(tempResult);
+          }
+          
+        }
+      }
+      
+      input.close();
+      result = this.expressStack.pop();
+      
+    } catch (Exception e) {
+      throw new InvalidExpression("Incorrect Expression");
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    return result;
   }
   
 }
