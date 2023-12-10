@@ -79,7 +79,16 @@ public class RevPolishCalc {
               throw new InvalidExpression("Divide By Zero Undefined");
             }            
             this.expressStack.push(leftOperand / rightOperand);
+          } else if (operator == Symbol.MINUS) { 
+            float rightOperand = this.expressStack.pop();
+            float leftOperand = this.expressStack.pop();
+            this.expressStack.push(leftOperand - rightOperand);
           }
+
+          
+          
+          
+          
            
         }
       }
@@ -90,14 +99,7 @@ public class RevPolishCalc {
     } catch (Exception e) {
       throw new InvalidExpression("Incorrect Expression");
     }
-    
-    
-    
-    
-    
-    
-    
-    
+     
     
     return result;
   }

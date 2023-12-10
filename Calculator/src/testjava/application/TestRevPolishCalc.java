@@ -59,5 +59,19 @@ class TestRevPolishCalc {
     assertThrows(InvalidExpression.class, () -> this.revPolishCalc.evaluate("10 0 /"),
         "Divide By Zero note permitted");
   }
+  
+  
+  @Test
+  void testMinus() throws InvalidExpression {
+    assertEquals(this.revPolishCalc.evaluate("9 6 -"), 3.0f);
+    assertEquals(this.revPolishCalc.evaluate("9 5 -"), 4.0f);
+    assertEquals(this.revPolishCalc.evaluate("15 3 -"), 12.0f);
+    assertEquals(this.revPolishCalc.evaluate("20 6 -"), 14.0f);
+    assertEquals(this.revPolishCalc.evaluate("100 15 -"), 85.0f);
+    
+  }
+
+  
+  
 
 }
