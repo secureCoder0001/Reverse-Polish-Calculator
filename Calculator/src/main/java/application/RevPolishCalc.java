@@ -74,10 +74,13 @@ public class RevPolishCalc {
           } else if (operator == Symbol.DIVIDE) {
             float rightOperand = this.expressStack.pop();
             float leftOperand = this.expressStack.pop();
+             
+            if (rightOperand == 0) {
+              throw new InvalidExpression("Divide By Zero Undefined");
+            }            
             this.expressStack.push(leftOperand / rightOperand);
           }
-          
-          
+           
         }
       }
       

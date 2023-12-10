@@ -53,4 +53,11 @@ class TestRevPolishCalc {
     assertEquals(this.revPolishCalc.evaluate("9 3 /"), 3.0f);       
     assertEquals(this.revPolishCalc.evaluate("9 2 /"), 4.5f);    
   }  
+  
+  @Test
+  void testDivideByZero() {
+    assertThrows(InvalidExpression.class, () -> this.revPolishCalc.evaluate("10 0 /"),
+        "Divide By Zero note permitted");
+  }
+
 }
