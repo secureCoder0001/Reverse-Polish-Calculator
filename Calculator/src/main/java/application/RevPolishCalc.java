@@ -93,6 +93,10 @@ public class RevPolishCalc {
       
       input.close();
       result = this.expressStack.pop();
+  
+      if (!this.expressStack.isEmpty()) {
+        throw new InvalidExpression("Unbalanced Expression");
+      }
       
     } catch (Exception e) {
       throw new InvalidExpression("Incorrect Expression");

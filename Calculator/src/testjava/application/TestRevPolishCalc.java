@@ -85,4 +85,17 @@ class TestRevPolishCalc {
     assertEquals(this.revPolishCalc.evaluate("25 15 *"), 375.0f);
   }
 
+  
+  @Test
+  void testInvalidExpression() {
+    // Test to ensure that an error is thrown when an expression is unbalanced.
+    // That is, there is either too many operators without operands or too many operands without operators.
+    
+    assertThrows(InvalidExpression.class, () -> this.revPolishCalc.evaluate("10 2"),
+        "Test that an InvlalidExpressionException is thrown when there is an unbalanced expression");
+      
+    assertThrows(InvalidExpression.class, () -> this.revPolishCalc.evaluate("100 9 + + +"),
+        "Test that an InvlalidExpressionException is thrown when there is an unbalanced expression");
+  }
+
 }
