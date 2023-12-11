@@ -5,18 +5,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 
-/*
- * NOTE TO MARKER: I would like to marker to note that this test class does not require as many tests as the alternative calculator, 
- * RevPolishCalc. 
- * 
- * Test cases such as checking what happens when zero is entered or inputting a single number onto the calculator is already 
- * tested in already tested in the underlying RevPolishCalc instance. As such, rewriting such tests here would cause code duplication.
- * 
- * I have therefore omitted these tests.
- * 
- * */
-
-
 class TestStandardCalc {
 
   private StandardCalc standardCalc;
@@ -44,5 +32,17 @@ class TestStandardCalc {
     assertThrows(InvalidExpression.class, () -> standardCalc.evaluate("3 6"),
         "Inputting ONLY two values should throw an InvalidExpressionException");
   }
+  
+  @Test
+  void testPlus() throws InvalidExpression {
+    assertEquals(this.standardCalc.evaluate("6 + 3"), 9.0f);
+    
+    assertEquals(this.standardCalc.evaluate("9 + 6 + 3"), 18.0f);
+    
+    assertEquals(this.standardCalc.evaluate("3 + 6 + 9 + 15"), 33.0f);
+    
+    assertEquals(this.standardCalc.evaluate("3 + 6 + 9 + 15 + 13 + 16 + 100"), 162.0f);
+  }
+
   
 }
