@@ -36,6 +36,13 @@ class TestStandardCalc {
   @Test
   void testSingleNum() throws InvalidExpression {
     assertEquals(standardCalc.evaluate("9"), 9.0);
+  }  
+  
+  @Test
+  void testTwoNums() {
+    
+    assertThrows(InvalidExpression.class, () -> standardCalc.evaluate("3 6"),
+        "Inputting ONLY two values should throw an InvalidExpressionException");
   }
-
+  
 }
