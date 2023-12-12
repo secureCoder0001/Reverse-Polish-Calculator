@@ -28,4 +28,15 @@ class TestCalcModel {
     assertEquals(calcModel.evaluate("6 7 *", false), 42.0f);
     assertEquals(calcModel.evaluate("6 9 +", false), 15.0f);
   }
+  
+  @Test
+  void testNotPostfix() {
+    // To test exception is thrown when invalid expression is entered into InfixCalc 
+    assertThrows(InvalidExpression.class, () -> calcModel.evaluate("6 * 10 ", false),
+        "Inputting an InvalidExpression should throw and InvalidExpressionException");
+    assertThrows(InvalidExpression.class, () -> calcModel.evaluate("500 * 3", false),
+        "Inputting an InvalidExpression should throw and InvalidExpressionException");
+    assertThrows(InvalidExpression.class, () -> calcModel.evaluate("9 * 3", false),
+        "Inputting an InvalidExpression should throw and InvalidExpressionException");
+  }  
 }
