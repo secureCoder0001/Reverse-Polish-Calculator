@@ -11,6 +11,7 @@ public class CalcModel {
   
   private Calculator reversePolish;
   private Calculator standard;
+  private float memory;
   
 
   /**
@@ -21,6 +22,7 @@ public class CalcModel {
   public CalcModel() {
     this.reversePolish = new RevPolishCalc();
     this.standard = new StandardCalc();
+    memory = 0.0f;
   }
   
   // Consider a second parameter, Boolean infix
@@ -36,19 +38,21 @@ public class CalcModel {
   public float evaluate(String expression, boolean infix) throws InvalidExpression {
     
     if (infix) {
-      return this.standard.evaluate(expression);
+      memory = this.standard.evaluate(expression);
+      return memory;
     }    
     
-    return this.reversePolish.evaluate(expression);
+    memory = this.reversePolish.evaluate(expression);
+    return memory;
   }
   
   /**
    * Method to access memory of either calculator and return last calculated result.
    * 
-   * @return result of last calculation (if any).
+   * @return result of last calculation.
    */
   public float getLastResult() {
     
-    return 15.0f;
+    return this.memory;
   }
 }

@@ -50,16 +50,24 @@ class TestCalcModel {
     assertThrows(InvalidExpression.class, () -> calcModel.evaluate("9 3 *", true),
         "Inputting an InvalidExpression should throw and InvalidExpressionException");
   }
-
   
   @Test
   void testMemory() throws InvalidExpression {
     // Test to check that the memory of the calculator works as expected.
-    float result = calcModel.evaluate("6 + 9", true); 
+    
+    float result = 0.0f;
+    
+    result = calcModel.evaluate("6 + 9", true); 
     assertEquals(calcModel.getLastResult(), result);
-  }
-
-  
-  
-  
+    
+    result = calcModel.evaluate("6 + 3", true);
+    assertEquals(calcModel.getLastResult(), result);
+    
+    result = calcModel.evaluate("6  9 + ", false); 
+    assertEquals(calcModel.getLastResult(), result);
+    
+    result = calcModel.evaluate("6 3 +", false);
+    
+    assertEquals(calcModel.getLastResult(), result);
+  }  
 }
