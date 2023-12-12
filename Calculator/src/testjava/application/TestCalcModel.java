@@ -25,5 +25,7 @@ class TestCalcModel {
   void testIsRevPolish() throws InvalidExpression {
     // Test to check that the appropriate evaluate method is called for an expression in reverse polish notation
     assertEquals(calcModel.evaluate("6 10 *", false), 60.0f);
+    assertEquals(calcModel.evaluate("6 7 *", false), 42.0f);
+    assertEquals(calcModel.evaluate("6 9 +", false), 15.0f);
   }
 }

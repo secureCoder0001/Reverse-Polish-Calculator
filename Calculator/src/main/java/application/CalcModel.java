@@ -40,6 +40,6 @@ public class CalcModel {
       return this.standard.evaluate(expression);
     }    
     
-    return 60.0f;
+    return this.reversePolish.evaluate(expression);
   }
 }
