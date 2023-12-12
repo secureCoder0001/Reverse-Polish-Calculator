@@ -14,7 +14,7 @@ class TestCalcModel {
   }
 
   @Test
-  void testIsInfix() throws InvalidExpression{
+  void testIsInfix() throws InvalidExpression {
     // Test to check that the appropriate evaluate method is called for an expression in infix notation.
     assertEquals(calcModel.evaluate("6 * 3", true), 18.0f);
     assertEquals(calcModel.evaluate("6 * 5", true), 30.0f);
@@ -39,4 +39,17 @@ class TestCalcModel {
     assertThrows(InvalidExpression.class, () -> calcModel.evaluate("9 * 3", false),
         "Inputting an InvalidExpression should throw and InvalidExpressionException");
   }  
+  
+  @Test
+  void testNotInfix() {
+    // To test exception is thrown when invalid expression is entered into InfixCalc
+    assertThrows(InvalidExpression.class, () -> calcModel.evaluate("6 1 *", true),
+        "Inputting an InvalidExpression should throw and InvalidExpressionException");
+    assertThrows(InvalidExpression.class, () -> calcModel.evaluate("5 3 *", true),
+        "Inputting an InvalidExpression should throw and InvalidExpressionException");
+    assertThrows(InvalidExpression.class, () -> calcModel.evaluate("9 3 *", true),
+        "Inputting an InvalidExpression should throw and InvalidExpressionException");
+  }
+
+  
 }

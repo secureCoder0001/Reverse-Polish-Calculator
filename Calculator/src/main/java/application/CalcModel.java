@@ -35,7 +35,6 @@ public class CalcModel {
    */
   public float evaluate(String expression, boolean infix) throws InvalidExpression {
     
-    
     if (infix) {
       return this.standard.evaluate(expression);
     }    
