@@ -44,5 +44,13 @@ class TestStandardCalc {
     assertEquals(this.standardCalc.evaluate("3 + 6 + 9 + 15 + 13 + 16 + 100"), 162.0f);
   }
 
-  
+  @Test
+  void testTimes() throws InvalidExpression{
+    assertEquals(this.standardCalc.evaluate("10 * 9"), 90.0f);
+    
+    assertEquals(this.standardCalc.evaluate("6 * 9 * 100"), 5400.0f);
+    
+    assertEquals(this.standardCalc.evaluate("9 * 6 * 3 * 2 * 300"), 97200.0f);
+    
+  } 
 }
