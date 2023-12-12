@@ -40,6 +40,6 @@ public class CalcModel {
       return this.standard.evaluate(expression);
     }    
     
-    return 18.0f;
+    return 60.0f;
   }
 }

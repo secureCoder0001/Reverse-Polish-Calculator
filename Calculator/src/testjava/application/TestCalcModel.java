@@ -15,10 +15,15 @@ class TestCalcModel {
 
   @Test
   void testIsInfix() throws InvalidExpression{
-    // Test to check that appropriate evaluate method is called for an expression in infix notation.
+    // Test to check that the appropriate evaluate method is called for an expression in infix notation.
     assertEquals(calcModel.evaluate("6 * 3", true), 18.0f);
     assertEquals(calcModel.evaluate("6 * 5", true), 30.0f);
     assertEquals(calcModel.evaluate("6 + 3", true), 9.0f);
   }
   
+  @Test
+  void testIsRevPolish() throws InvalidExpression {
+    // Test to check that the appropriate evaluate method is called for an expression in reverse polish notation
+    assertEquals(calcModel.evaluate("6 10 *", false), 60.0f);
+  }
 }
