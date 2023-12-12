@@ -52,4 +52,14 @@ class TestCalcModel {
   }
 
   
+  @Test
+  void testMemory() throws InvalidExpression {
+    // Test to check that the memory of the calculator works as expected.
+    float result = calcModel.evaluate("6 + 9", true); 
+    assertEquals(calcModel.getLastResult(), result);
+  }
+
+  
+  
+  
 }

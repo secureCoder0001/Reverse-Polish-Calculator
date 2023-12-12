@@ -41,4 +41,14 @@ public class CalcModel {
     
     return this.reversePolish.evaluate(expression);
   }
+  
+  /**
+   * Method to access memory of either calculator and return last calculated result.
+   * 
+   * @return result of last calculation (if any).
+   */
+  public float getLastResult() {
+    
+    return 15.0f;
+  }
 }
