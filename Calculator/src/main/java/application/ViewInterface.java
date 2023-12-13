@@ -11,34 +11,43 @@ import java.util.function.Consumer;
  * work together.
  * 
  * @author Dave Cohen (d.cohen@rhul.ac.uk)
+ * @author Mohamed Mohamed
  * 
  **/
 public interface ViewInterface {
+  
+  /**
+   * Observer method to be notified when a calculation is required.
+   */
+  void addCalculateObserver(Observer observer);
+  
+  /**
+   * Observer method to be notified when a change in type preference has been selected/specified.
+   */
+  void addTypeObserver(Observer observer);
 
   /**
-   * Add the method that should do the calculation.
-   * 
-   * @param f the runnable object to do the calculation (a method that takes no parameters and
-   *        returns no value)
+   * Observer method to be notified when a change to reset the calculator (buffer) is requested.
    */
-  void addCalculateObserver(Runnable f);
-
-  /**
-   * Add the method to tell the controller the type of calculation to do.
-   * 
-   * @param c the method to do the calculation takes an OpType argument and returns no value
-   */
-  void addTypeObserver(Consumer<OpType> c);
-
+  public void addResetObserver(Observer observer);
+  
   /**
    * The controller can call this to find the current expression to be evaluated.
+   * 
+   * @return expression entered by the user.
    */
   String getExpression();
-
+  
+  /**
+   * Method to get the type of notation to indicate expression notation to be used.
+   * 
+   * @return expression notation to be used.
+   */
+  public String getExpressionType();
+  
   /**
    * The controller should call this to display the evaluated answer to the user.
    */
-
   void setAnswer(String a);
 
   /**
