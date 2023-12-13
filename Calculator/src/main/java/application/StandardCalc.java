@@ -6,7 +6,7 @@ import java.util.Scanner;
  * Class to represent calculator that performs calculations in infix notation.
  * 
  * @author Mohamed Mohamed
- * 
+ *
  */
 public class StandardCalc implements Calculator {
 
@@ -20,7 +20,6 @@ public class StandardCalc implements Calculator {
   public StandardCalc() {
     revPolishCalc = new RevPolishCalc();
   }
-  
   
   /**
    * Method to determine if two operators have the same level of precedence.
@@ -38,8 +37,6 @@ public class StandardCalc implements Calculator {
     return 3;
   }
 
-  
-
   /**
    * Evaluates expressoin in infix notation. Really, it converts the expression to 
    * reverse polish (postfix) notation (using the Shunting Yard Algorithm) and calls 
@@ -49,7 +46,7 @@ public class StandardCalc implements Calculator {
    * 
    * @return Result of the given expression.
    * 
-   * @throws InvalidExpression If an invalid expression is entered.
+   * @throws InvalidExpressionException If an invalid expression is entered.
    */
   @Override
   public float evaluate(String expression) throws InvalidExpression {
@@ -57,12 +54,14 @@ public class StandardCalc implements Calculator {
     opStack = new OpStack();
     output = "";
     Scanner scanner = new Scanner(expression);
-
+    boolean expectNumber = true;
+    
     while (scanner.hasNext()) {
-      if (scanner.hasNextFloat()) {
+      if (scanner.hasNextFloat() && expectNumber) {
         output += scanner.next() + " ";
+        expectNumber = false;
       } else {      
-       
+        //expectNumber = true;
         String readItem = scanner.next(); // ith item read from expression
         Symbol topItem = Symbol.INVALID; 
         Symbol operator = Symbol.INVALID; 
@@ -78,7 +77,9 @@ public class StandardCalc implements Calculator {
         if (operator == Symbol.INVALID) {
           throw new InvalidExpression("Invalid Symbol: Operator Expected");
         }
-                        
+        
+        expectNumber = true;
+        
         // To get item at top of opStack instance
         if (!opStack.isEmpty()) {
           topItem = this.opStack.top();          
@@ -99,17 +100,17 @@ public class StandardCalc implements Calculator {
         }        
         
         this.opStack.push(operator); 
+        expectNumber = true;
       }
       
     }
-
     
     // Pop remaing items off stack (if any), and add them to the output by order of popping
     while (!opStack.isEmpty()) {
       this.output += opStack.pop() + " ";
     }
     
+     
     return this.revPolishCalc.evaluate(output.trim()); 
-  }
-  
+  } 
 }
