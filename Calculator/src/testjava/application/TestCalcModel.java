@@ -70,4 +70,26 @@ class TestCalcModel {
     
     assertEquals(calcModel.getLastResult(), result);
   }  
+  
+  @Test
+  void testReset() throws InvalidExpression {
+    
+    float result = 0.0f;
+    
+    result = calcModel.evaluate("8 + 2", true); 
+    assertEquals(calcModel.getLastResult(), result);
+    calcModel.reset();
+    assertEquals(calcModel.getLastResult(), 0.0f);
+    
+    
+    result = calcModel.evaluate("6 + 3", true);
+    assertEquals(calcModel.getLastResult(), result);
+    calcModel.reset();
+    assertEquals(calcModel.getLastResult(), 0);
+    
+    result = calcModel.evaluate("6  9 + ", false); 
+    assertEquals(calcModel.getLastResult(), result);
+    calcModel.reset();
+    assertEquals(calcModel.getLastResult(), 0.0f);
+  }
 }
