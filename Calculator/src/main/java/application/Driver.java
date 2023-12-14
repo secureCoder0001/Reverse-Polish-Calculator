@@ -16,11 +16,6 @@ public class Driver {
     CalcModel model = new CalcModel();
     System.out.println("hello");
 
-    // Decide which view to build.
-    if (System.console() == null) {
-      System.out.println("hello");
-      view = CalcView.getInstance();
-    }
     new CalcController(model, view);
     // All ready so begin the interface.
     view.startView();
