@@ -1,17 +1,5 @@
 package application;
 
-// **********************************
-// NOTE of differences:
-
-/* Notes of differences:
- * - CalcModel variable name
- * - ViewInterface variable name 
- * 
- * - handleCalculation method name
- * - handleSetExpressionType method name
- * - handlReset - method not in provided UML
- */
-
 /**
  * The controller that sits between the calculator model that does actual evaluation and the view
  * that is the part the user interfaces with.
