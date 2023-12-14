@@ -55,4 +55,11 @@ public class CalcModel {
     
     return this.memory;
   }
+  
+  /**
+   * Method to reset calculator memory.
+   */
+  public void reset() {
+    this.memory = 0;
+  }
 }
