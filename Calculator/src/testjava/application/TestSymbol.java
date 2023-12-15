@@ -7,7 +7,7 @@ class TestSymbol {
 
   @Test // Test 1
   void testToString() {
-
+ 
     // To test that each symbol is associated with the right descriptor
     
     Symbol symbol = Symbol.RIGHT_BRACKET;

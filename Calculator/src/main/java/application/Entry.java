@@ -159,6 +159,11 @@ public class Entry {
     return type;
   }
 
+  /**
+   * Formatted string represenation of the object's attributes.
+   * 
+   * @return a formatted string representation of the arributes.
+   */
   @Override
   public String toString() {
 

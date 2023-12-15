@@ -18,7 +18,7 @@ class TestNumStack {
   
   @Test
   void testStackSize() {
-    //Test that the newly created stack returns the expected of 0 items
+    // Test that the newly created stack returns the expected value of 0 items
     assertEquals(numStack.size(), 0, "Test that the newly created stack returns the expected size of 0 items");   
     
   }
@@ -48,7 +48,7 @@ class TestNumStack {
     assertEquals(numStack.top(), 90.5f);
   }
   
-  @Test // Test to check pops the expected numbers from stack.
+  @Test // Test to check that pop() method pops the expected numbers from stack.
   void testPop() {
     
     numStack.push(90.5f);
@@ -66,7 +66,7 @@ class TestNumStack {
   }
   
   
-  @Test
+  @Test // Test to check that isEmpty() method return the correct boolean value when a new stack is created.
   void testIsEmpty() {
     assertTrue(numStack.isEmpty());
     

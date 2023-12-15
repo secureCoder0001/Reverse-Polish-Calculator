@@ -1,10 +1,10 @@
 package application;
 
+import java.io.IOException;
+
 // You can use this file in your second assignment as is - or modify it to suit your code - in which
 // case add another @author tag below mine
 // DO NOT remove my @author tag
-
-import java.util.function.Consumer;
 
 /**
  * Any calculator view must implement these methods to allow the controller and the view to properly
