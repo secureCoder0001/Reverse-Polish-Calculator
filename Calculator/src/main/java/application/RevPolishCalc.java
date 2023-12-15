@@ -8,7 +8,7 @@ import java.util.Scanner;
  * @author Mohamed Mohamed
  *
  */
-public class RevPolishCalc {
+public class RevPolishCalc implements Calculator {
 
   private NumStack expressStack;
   

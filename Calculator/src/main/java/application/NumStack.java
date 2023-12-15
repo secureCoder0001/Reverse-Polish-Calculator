@@ -1,6 +1,5 @@
 package application;
 
-// import java.util.function.BooleanSupplier;
 
 /**
  * A facade for stack to hide implementation details of stack for ease of use of floats. 
@@ -13,7 +12,7 @@ public class NumStack {
   private EntryStack stack;
   
   /**
-   * Constructs and initialises a new stack.
+   * Constructs and initialises a new NumStack.
    * 
    */
   public NumStack() {
@@ -43,7 +42,7 @@ public class NumStack {
 
   
   /**
-   * Top method to return item at top of stack.
+   * Top method to return item at top of stack (without removing it).
    * 
    * @return item at top of stack.
    */
@@ -59,9 +58,9 @@ public class NumStack {
   }
   
   /**
-   * Method to return a float from the NumStack and removing it from said NumStack.
+   * Method to return a float from the NumStack (if it exitsts) and remove it from said NumStack.
    * 
-   * @return item returned from stack.
+   * @return item popped from NumStack instance.
    */
   public float pop() {
     

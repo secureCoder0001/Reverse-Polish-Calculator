@@ -13,9 +13,8 @@ public interface Calculator {
    * badly formed expression is notified to the caller by throwing an exception.
    * 
    * @param expression the question to be answered
-   * @param infix how to evaluate the question: true means infix, false means reverse polish
    * @return the calculated value
    * @throws InvalidExpression when the expression cannot be evaluated
    */
-  public float evaluate(String expression, Boolean infix) throws InvalidExpression;
+  public float evaluate(String expression) throws InvalidExpression;
 }

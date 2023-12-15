@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 class TestEntry {
-
+ 
   @Test // Test 1
 
   // Tests that the constructor creates a number entry
