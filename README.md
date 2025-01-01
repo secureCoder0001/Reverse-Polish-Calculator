@@ -1,6 +1,9 @@
-# CS2800
+# Reverse Polish and Infix Notation Calculator
 
-This repository has been created to store your CS2800 work.
+- A calulator which can evaluate expression in both Post-fix and good ol' Infix! 
 
-You may edit it as you like, but please do not remove the default topics or the project members list. These need to stay as currently defined in order for your lecturer to be able to find and mark your work.
+- Can take, as input, expressions, in either postfix and infix notation. 
 
+- Presentation provided in repo with further details of internal workings.  
+
+- Developed using TDD (Test-driven Development). Application uses the MVC (Mode-View-Controller) design pattern.
