@@ -2,7 +2,7 @@
 
 - A calulator which can evaluate expression in both Post-fix and good ol' Infix! 
 
-- Can take, as input, expressions, in either postfix and infix notation. 
+- Can take, as input, expressions in either postfix and infix notation. 
 
 - Presentation provided in repo with further details of internal workings.  
 
